@@ -4283,6 +4283,7 @@
   ip: "abc",
   isCoordinator: true | false,
   isExecutor: true | false,
+  isMaster: true | false,
   memory: 1.0,
   name: "abc",
   nodeTag: "abc",
