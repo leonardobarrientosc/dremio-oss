@@ -167,7 +167,7 @@ public class OAuthResource {
               if (r.equals(oauthConfig.getRoleUserMapping())) {
                 role = "user";
               }
-              if (r.equals(oauthConfig.getRoleUserMapping())) {
+              if (r.equals(oauthConfig.getRoleAdminMapping())) {
                 role = "admin";
               }
               if (!role.isEmpty()) {

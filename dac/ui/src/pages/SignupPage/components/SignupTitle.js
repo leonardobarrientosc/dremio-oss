@@ -32,7 +32,7 @@ export default class SignupTitle extends Component {
     return (
       <div id='signup-title' style={[styles.base]}>
         <h1 style={[styles.mainTitle]}>
-          {la('Welcome to Dremio')}
+          {la('Welcome to Dremio Oauth')}
         </h1>
         <div style={[styles.subtitleWrap]}>
           <FontIcon type='NarwhalLogo' theme={styles.theme} iconClass={'dremioLogo'} />

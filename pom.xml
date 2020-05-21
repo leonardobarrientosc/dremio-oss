@@ -870,6 +870,9 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
+          <configuration>
+            <tarLongFileMode>posix</tarLongFileMode>
+          </configuration>
           <version>3.1.1</version>
         </plugin>
         <plugin>
