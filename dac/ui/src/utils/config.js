@@ -34,6 +34,7 @@ export default { // defaults, and defaults for unit tests
   lowerProvisioningSettingsEnabled: false,
   allowFileUploads: true,
   allowSpaceManagement: false,
+  authType: 'oauth',
   subhourAccelerationPoliciesEnabled: false,
   versionInfo: {
     buildTime: 0,

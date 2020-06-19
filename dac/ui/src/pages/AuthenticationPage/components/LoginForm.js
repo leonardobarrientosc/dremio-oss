@@ -65,7 +65,7 @@ export class LoginForm extends PureComponent {
 
     const oauthForm = (
       <div style={{marginTop: 20}}>
-        <h2 style={{color: '#43B8C9'}}>or login via external provider</h2>
+        <h2 style={{color: '#43B8C9'}}>Login with your Universia Credential</h2>
         <a href={'/apiv2/oauth/login'}>
           <Button
               type={ButtonTypes.NEXT}
@@ -80,7 +80,7 @@ export class LoginForm extends PureComponent {
       <div id='login-form' style={[styles.base]}>
         <LoginTitle
           style={{marginBottom: 10}}
-          subTitle={la('Welcome to Dremio, please log in.')}/>
+          subTitle={la('Welcome to Dremio at Universia, please log in.')}/>
         <ViewStateWrapper
           style={{paddingTop: 45}}
           hideChildrenWhenFailed={false}
@@ -97,8 +97,7 @@ export class LoginForm extends PureComponent {
 
   renderForm() {
     const { fields: { userName, password }, viewState } = this.props;
-
-    return (
+    const loginButton = (
       <InnerComplexForm
         {...this.props}
         style={styles.form}
@@ -127,22 +126,25 @@ export class LoginForm extends PureComponent {
               style={styles.input}/>
           </FieldWithError>
         </div>
-        <div style={styles.submitWrapper}>
-          <div style={{display: 'flex', flexGrow: 1}}>
-            <Button
-              type={ButtonTypes.NEXT}
-              key='details-wizard-next'
-              style={{marginBottom: 0}}
-              text={la('Log In')}/>
-            <Spinner
-              iconStyle={styles.spinnerIcon}
-              style={{display: viewState.get('isInProgress') ? 'block' : 'none', ...styles.spinner}}/>
-          </div>
-          <div style={{display: 'flex', alignItems: 'center'}}>
-            <a href='https://www.dremio.com/legal/privacy-policy' target='_blank'>Privacy</a>
-          </div>
+      <div style={styles.submitWrapper}>
+        <div style={{display: 'flex', flexGrow: 1}}>
+          <Button
+            type={ButtonTypes.NEXT}
+            key='details-wizard-next'
+            style={{marginBottom: 0}}
+            text={la('Log In')}/>
+          <Spinner
+            iconStyle={styles.spinnerIcon}
+            style={{display: viewState.get('isInProgress') ? 'block' : 'none', ...styles.spinner}}/>
         </div>
+        <div style={{display: 'flex', alignItems: 'center'}}>
+          <a href='https://www.dremio.com/legal/privacy-policy' target='_blank'>Privacy</a>
+        </div>
+      </div>
       </InnerComplexForm>
+    );
+    return (
+        config.authType === 'oauth' ? null : loginButton
     );
   }
 }

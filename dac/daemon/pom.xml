@@ -220,7 +220,27 @@
                 <argument>-Ddremio_debug=true</argument>
                 <argument>-Djava.io.tmpdir=${project.build.directory}</argument>
                 <argument>-Ddac_prepopulate=true</argument>
-                <argument>-Ddebug.addDefaultUser=true</argument>
+                <argument>-Ddebug.addDefaultUser=false</argument>
+                <argument>-Ddebug.allowTestApis=true</argument>
+                <argument>-classpath</argument>
+                <classpath/>
+                <argument>com.dremio.dac.daemon.DremioDaemon</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>default-cli-next</id>
+            <configuration>
+              <classpathScope>test</classpathScope>
+              <executable>java</executable>
+              <arguments>
+                <argument>-Xms512m</argument>
+                <argument>-Xmx4g</argument>
+                <argument>-XX:MaxDirectMemorySize=1g</argument>
+                <argument>-Ddremio_debug=true</argument>
+                <argument>-Djava.io.tmpdir=${project.build.directory}</argument>
+                <argument>-Ddac_prepopulate=false</argument>
+                <argument>-Ddebug.addDefaultUser=false</argument>
                 <argument>-Ddebug.allowTestApis=true</argument>
                 <argument>-classpath</argument>
                 <classpath/>
