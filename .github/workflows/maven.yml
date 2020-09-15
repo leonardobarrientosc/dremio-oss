@@ -20,3 +20,8 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn clean install -DskipTests
+    - name: Upload the artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: distribution-artifact
+        path: distribution/server/target/*.tar.gz
